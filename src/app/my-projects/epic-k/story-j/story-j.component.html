@@ -1,0 +1,8 @@
+<div>
+    <ul style="list-style: none;">
+        <li *ngFor="let task of arrayTasks">
+           {{task.nombre}}
+        </li>
+        <button (click)="enviarTarea()">enviar</button>
+    </ul>
+</div>
