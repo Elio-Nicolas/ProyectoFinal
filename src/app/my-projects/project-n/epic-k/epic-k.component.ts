@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Story } from 'src/app/story';
-
 
 @Component({
   selector: 'app-epic-k',
@@ -13,7 +11,5 @@ export class EpicKComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  arrayStorys!: Story[];
 
 }
