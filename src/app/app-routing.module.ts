@@ -32,7 +32,7 @@ import { SettingsComponent } from './settings/settings/settings.component';
        component: MyProjectsComponent
       },
 
-      {path: 'my-projects/project-n',
+      {path: 'my-projects/:id',
        component:ProjectNComponent
       },
 

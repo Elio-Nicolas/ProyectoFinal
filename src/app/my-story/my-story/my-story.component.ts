@@ -8,6 +8,8 @@ import { TaskService } from 'src/app/task.service';
 })
 export class MyStoryComponent implements OnInit {
 
+  
+
   constructor( private servicioTarea: TaskService) { }
 
   arrayTarea: Task[]=[]
@@ -18,5 +20,7 @@ export class MyStoryComponent implements OnInit {
       this.arrayTarea.push(data);
     });
   }
+
+  
 
 }
