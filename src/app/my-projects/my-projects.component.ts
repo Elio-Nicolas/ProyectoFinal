@@ -9,25 +9,26 @@ import { ServiciosService } from '../Services/servicios.service';
 })
 export class MyProjectsComponent implements OnInit {
 
-  public respuesta:any
-
   constructor( private route:ActivatedRoute, private servicio: ServiciosService) { }
+
+  public datos:any =[]
 
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe( (paramMap:any)=>{
+    //this.route.paramMap.subscribe( (paramMap:any)=>{
      // const {params}= paramMap
      this.cargaProject()
 
      //console.log(paramMap)
       //this.cargaProject()
-    })
+    //})
 
   }
 
-  cargaProject(){
+  public cargaProject(){
     this.servicio.get('http://localhost:3001/apiWeb/projects').
     subscribe(respuesta=>{
+      this.datos=respuesta;
       console.log(respuesta)
     })
     

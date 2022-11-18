@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ServiciosService } from 'src/app/Services/servicios.service';
 
 @Component({
   selector: 'app-story-j',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoryJComponent implements OnInit {
 
-  constructor() { }
+  public datos: any=[]
+  constructor(private http:HttpClient, private servicio:ServiciosService) { }
 
   ngOnInit(): void {
+    //this.route.paramMap.subscribe( (paramMap:any)=>{
+     // const {params}= paramMap
+     this.cargaStory()
+
+     //console.log(paramMap)
+      //this.cargaProject()
+    //})
   }
 
+  public cargaStory(){
+    this.servicio.get('http://localhost:4200/my-projects/project-n/epic-k/story-j').
+    subscribe( (respuesta)=>{
+      this.datos=respuesta
+    })
+  }
 }

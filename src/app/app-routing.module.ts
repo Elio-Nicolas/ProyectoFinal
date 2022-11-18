@@ -32,21 +32,21 @@ import { SettingsComponent } from './settings/settings/settings.component';
        component: MyProjectsComponent
       },
 
-      {path: 'my-projects/:id',
+      {path: 'my-projects/:project-n',
        component:ProjectNComponent
       },
 
-      {path: 'my-projects/project-n/epic-k',
+      {path: 'my-projects/:project-n/:epic-k',
        component:EpicKComponent
       },
 
       {
-        path: 'my-projects/project-n/epic-k/story-j',
+        path: 'my-projects/:project-n/:epic-k/:story-j',
         component:StoryJComponent
       },
 
       {
-        path: 'my-projects/project-n/epic-k/story-j/task',
+        path: 'my-projects/:project-n/:epic-k/:story-j/task',
         component: TaskComponent
       }
 
