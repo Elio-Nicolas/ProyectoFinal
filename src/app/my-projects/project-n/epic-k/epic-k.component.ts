@@ -24,9 +24,9 @@ export class EpicKComponent implements OnInit {
   }
 
   public cargaEpicas(){
-    this.servicio.get('http://localhost:4200/my-projects/project-n/epic-k').
+    this.servicio.get('http://localhost:3001/apiWeb/epics').
     subscribe( (respuesta)=>{
-      this.datos=respuesta
+      this.datos=JSON.stringify(respuesta)
     })
   }
 }

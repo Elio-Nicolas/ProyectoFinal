@@ -23,9 +23,9 @@ export class StoryJComponent implements OnInit {
   }
 
   public cargaStory(){
-    this.servicio.get('http://localhost:4200/my-projects/project-n/epic-k/story-j').
+    this.servicio.get('http://localhost:3001/apiWeb/storys').
     subscribe( (respuesta)=>{
-      this.datos=respuesta
+      this.datos=JSON.stringify(respuesta)
     })
   }
 }

@@ -29,9 +29,9 @@ export class TaskComponent implements OnInit {
 
 
   cargaTask(){
-    this.servicio.get('http://localhost:4200/my-projects/project-n/epic-k/story-j/task').
+    this.servicio.get('http://localhost:3001/apiWeb/tasks').
     subscribe( (respuesta)=>{
-      this.datos=respuesta
+      this.datos=JSON.stringify(respuesta)
     })
   }
   enviar(tarea:string){

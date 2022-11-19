@@ -24,7 +24,7 @@ export class ProjectNComponent implements OnInit {
 
   public cargaProject(){
 
-    this.servicio.get('http://localhost:4200/my-projects/project-n').
+    this.servicio.get('http://localhost:3001/my-projects/:id').
     subscribe( (respuesta)=>{
       this.datos=respuesta
     })

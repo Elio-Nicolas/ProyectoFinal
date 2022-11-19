@@ -28,7 +28,7 @@ export class MyProjectsComponent implements OnInit {
   public cargaProject(){
     this.servicio.get('http://localhost:3001/apiWeb/projects').
     subscribe(respuesta=>{
-      this.datos=respuesta;
+      this.datos=JSON.stringify(respuesta);
       console.log(respuesta)
     })
     
