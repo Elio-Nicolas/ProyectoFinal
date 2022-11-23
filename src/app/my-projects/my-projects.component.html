@@ -1,18 +1,34 @@
-<p>my-projects works!</p>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+      <a class="nav-link" href=" " >Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="my-Story ">My-Story</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="settings">settings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="my-projects">My-Projects</a>
+    </li>
+  </ul>
+  </nav>
+<br><br><br><br><br>
 
-   <!--- <div class="card" style="width:400px">
-    <div class="card-body">
-      <h4 class="card-title">Proyecto 1</h4>
-      <p class="card-text">{{datos?.data}}</p>
-      <a href="my-projects/project-n/epic-k" class="card-link">Epicas</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>-->
-
-  <div>
-    <ul >
-      <li >
-          <div >{{datos}}</div>
-      </li>
-    </ul>
-  </div>
+<div class="cuadro">
+  <ul>
+    <li style="list-style: none;">
+      <div *ngFor="let dato of datos?.data">
+        <div class="card" style="width:400px">
+          <div class="card-body">
+            <h4 class="card-title">{{dato.name}}</h4>
+            <p class="card-text">{{dato.description}}</p>
+            <a href="my-projects/project-n/epic-k" class="card-link">Epicas</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

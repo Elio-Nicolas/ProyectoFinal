@@ -25,7 +25,7 @@ export class StoryJComponent implements OnInit {
   public cargaStory(){
     this.servicio.get('http://localhost:3001/apiWeb/storys').
     subscribe( (respuesta)=>{
-      this.datos=JSON.stringify(respuesta)
+      this.datos=(respuesta)
     })
   }
 }

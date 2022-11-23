@@ -12,6 +12,8 @@ export class TaskComponent implements OnInit {
 
   public datos :any =[]
 
+  public x:any
+
   constructor(private servicioTarea: TaskService, private servicio: ServiciosService,
               private http: HttpClient ) { }
 
@@ -31,12 +33,21 @@ export class TaskComponent implements OnInit {
   cargaTask(){
     this.servicio.get('http://localhost:3001/apiWeb/tasks').
     subscribe( (respuesta)=>{
-      this.datos=JSON.stringify(respuesta)
+      this.datos=(respuesta)
     })
   }
   enviar(tarea:string){
 
     this.servicioTarea.EnviaTarea(tarea);
 
+  }
+
+  enviaTask(data:string,event: MouseEvent){
+    //event.preventDefault(); 
+    this.servicio.post(data).
+    subscribe((respuesta) => {this.datos.unshift(data)
+     this.x= (respuesta)
+     console.log(this.x)
+    })
   }
 }

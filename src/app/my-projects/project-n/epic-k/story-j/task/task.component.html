@@ -1,9 +1,44 @@
-<h1>lista de tareas</h1>
-<div>
-    <form>
-        <input #nuevatarea type="text" placeholder="ingrese tarea">
-        <button class="btn btn-primary" (click)="enviar(nuevatarea.value)">Add</button>
-    </form>
-</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a class="nav-link" href=" ">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="my-Story ">My-Story</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="settings">settings</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="my-projects">My-Projects</a>
+        </li>
+    </ul>
+</nav>
+<br><br><br><br><br>
 
-<div>{{datos}}</div>
+<div class="cuadro">
+    <div class="card">
+        <form>
+            <input #nuevatarea type="text" placeholder="ingrese tarea">
+            <button class="btn btn-primary" (click)="enviaTask(nuevatarea.value,$event)">Add</button>
+        </form>
+    </div>
+</div>
+<br><br>
+
+<div class="cuadro">
+    <ul>
+        <li style="list-style: none;">
+            <div *ngFor="let dato of datos?.data">
+                <div class="card" style="width:400px">
+                    <div class="card-body">
+                        <h4 class="card-title">{{dato.name}}</h4>
+                        <p class="card-text">{{dato.description}}</p>
+                        <a href='#' class="card-link">Detalle tarea</a>
+                        <a href="my-projects/project-n/epic-k/story-j" class="card-link">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
